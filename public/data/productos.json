@@ -1,0 +1,146 @@
+[
+{
+"id": 1,
+"nombre": "Bandera",
+"precio": 10000,
+"stock":10,
+"imagen": "/images/Bandera.png",
+"destacado": false
+},
+{
+"id": 2,
+"nombre": "Escarapela",
+"precio": 1500,
+"stock":15,
+"imagen": "/images/Escarapela.png",
+"destacado": true
+},
+{
+"id": 3,
+"nombre": "Flor",
+"precio": 8000,
+"stock":2,
+"imagen": "/images/Flor.png",
+"destacado": true
+},
+{
+"id": 4,
+"nombre": "Atrapasueños",
+"precio": 10000,
+"stock":5,
+"imagen": "/images/atrapasueñoschico.jpeg",
+"destacado": false
+},
+{
+"id": 5,
+"nombre": "Aros Whipala",
+"precio": 3000,
+"stock":10,
+"imagen": "/images/aroswhipala.jpeg",
+"destacado": false
+},
+{
+"id": 6,
+"nombre": "Aros Hoja",
+"precio": 2000,
+"stock":4,
+"imagen": "/images/aroshoja.jpeg",
+"destacado": false
+},
+{
+"id": 7,
+"nombre": "Buho",
+"precio": 7000,
+"stock":15,
+"imagen": "/images/buho.jpeg",
+"destacado": false
+},
+{
+"id": 8,
+"nombre": "Corazon",
+"precio": 8000,
+"stock":20,
+"imagen": "/images/corazon.jpeg",
+"destacado": true
+},
+{
+"id": 9,
+"nombre": "Aros Circular",
+"precio": 3000,
+"stock":6,
+"imagen": "/images/aroscircular.jpeg",
+"destacado": false
+},
+{
+"id": 10,
+"nombre": "Aros Dobles",
+"precio": 3000,
+"stock":12,
+"imagen": "/images/arosdobles.jpeg",
+"destacado": false
+},
+{
+"id": 11,
+"nombre": "Aros Estrella",
+"precio": 4000,
+"stock":2,
+"imagen": "/images/arosestrella.jpeg",
+"destacado": false
+},
+{
+"id": 12,
+"nombre": "Girasol",
+"precio": 8000,
+"stock":2,
+"imagen": "/images/girasol2.jpeg",
+"destacado": false
+},
+{
+"id": 13,
+"nombre": "Girasol LLavero",
+"precio": 8000,
+"stock":2,
+"imagen": "/images/girasol.jpeg",
+"destacado": false
+},
+{
+"id": 14,
+"nombre": "Manta Girasol",
+"precio": 28000,
+"stock":2,
+"imagen": "/images/mantagirasol.jpeg",
+"destacado": false
+},
+{
+"id": 15,
+"nombre": "Pulsera",
+"precio": 3000,
+"stock":2,
+"imagen": "/images/pulsera.jpeg",
+"destacado": false
+},
+{
+"id": 16,
+"nombre": "Set Bebé",
+"precio": 30000,
+"stock":5,
+"imagen": "/images/setbebe.jpeg",
+"destacado": false
+},
+{
+"id": 17,
+"nombre": "Top",
+"precio": 10000,
+"stock":15,
+"imagen": "/images/topropa.jpeg",
+"destacado": false
+},
+{
+"id": 18,
+"nombre": "Atrapasueños Escarapela",
+"precio": 15000,
+"stock":3,
+"imagen": "/images/atrapasueñosescarapela.jpeg",
+"destacado": true
+}
+]

@@ -1,0 +1,26 @@
+[
+{
+"id": 1,
+"nombre": "Andrea",
+"apellido": "Sanchez",
+"imagen": "/images/tejedora.png",
+"contacto": 1161626364,
+"rol": "Diseñadora"
+},
+{
+"id": 2,
+"nombre": "Paula",
+"apellido": "Sanchez",
+"imagen": "/images/marketing.png",
+"contacto": 1192939194,
+"rol": "Marketing"
+},
+{
+"id": 3,
+"nombre": "Laura",
+"apellido": "Sanchez",
+"imagen": "/images/atencion.png",
+"contacto": 1123242526,
+"rol": "Atención al Cliente"
+}
+]

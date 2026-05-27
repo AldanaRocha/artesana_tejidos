@@ -1,0 +1,37 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Home from "../pages/Home";
+import Productos from "../pages/Productos";
+import ProductosDetalle from "../pages/ProductosDetalle";
+import Carrito from "../pages/Carrito";
+
+import Layout from "../components/Layout/Layout";
+
+const AppRouter = () => {
+  return (
+    <BrowserRouter>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+
+          <Route
+            path="/productos"
+            element={<Productos />}
+          />
+
+          <Route
+            path="/producto/:id"
+            element={<ProductosDetalle />}
+          />
+
+          <Route
+            path="/carrito"
+            element={<Carrito />}
+          />
+        </Routes>
+      </Layout>
+    </BrowserRouter>
+  );
+};
+
+export default AppRouter;
