@@ -1,49 +1,131 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useState,useContext } from "react";
+import { useEffect, useState, useContext } from "react";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../firebase/config";
 import { CartContext } from "../context/CartContext";
+
+import {
+  Container,
+  Row,
+  Col,
+  Card,
+  Button,
+  Spinner,
+  Badge,
+} from "react-bootstrap";
 
 const ProductosDetalle = () => {
   const { id } = useParams();
 
   const [producto, setProducto] = useState(null);
-  const { addToCart } = useContext(CartContext);
-  useEffect(() => {
-    fetch("/data/productos.json")
-      .then((response) => response.json())
-      .then((data) => {
-        const productoEncontrado = data.find(
-          (prod) => prod.id === Number(id)
-        );
 
-        setProducto(productoEncontrado);
-      });
-  }, [id]);
+  const { addToCart } = useContext(CartContext);
+useEffect(() => {
+  const obtenerProducto = async () => {
+    try {
+      const productoRef = doc(db, "productos", id);
+
+      const snapshot = await getDoc(productoRef);
+
+      if (snapshot.exists()) {
+        setProducto({
+          id: snapshot.id,
+          ...snapshot.data(),
+        });
+      } else {
+        console.log("El producto no existe");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  obtenerProducto();
+}, [id]);
 
   if (!producto) {
-    return <h2>Cargando...</h2>;
+    return (
+      <div className="text-center mt-5">
+        <Spinner animation="border" />
+      </div>
+    );
   }
 
   return (
-    <div
-      style={{
-        padding: "30px",
-      }}
-    >
-      <img
-        src={producto.imagen}
-        alt={producto.nombre}
-        width="300"
-      />
+    <Container className="my-5">
+      <Card className="shadow p-4">
+        <Row className="align-items-center">
 
-      <h1>{producto.nombre}</h1>
+          <Col md={6} className="text-center">
+            <img
+              src={producto.imagen}
+              alt={producto.nombre}
+              className="img-fluid rounded"
+              style={{ maxHeight: "450px" }}
+            />
+          </Col>
 
-      <h2>${producto.precio}</h2>
+          <Col md={6}>
 
-      <p>Stock disponible: {producto.stock}</p>
-      <button onClick={() => addToCart(producto)}>
-            Agregar al carrito
-            </button>
-    </div>
+            <h2
+              style={{
+                color: "#7a4e3a",
+                fontWeight: "bold",
+              }}
+            >
+              {producto.nombre}
+            </h2>
+
+            {producto.destacado && (
+              <Badge
+                bg="light"
+                text="dark"
+                className="me-2"
+              >
+                ⭐ Destacado
+              </Badge>
+            )}
+
+            {producto.oferta && (
+              <Badge bg="danger">
+                🔥 Oferta
+              </Badge>
+            )}
+
+            <h3
+              className="mt-4"
+              style={{ color: "#7a4e3a" }}
+            >
+              ${producto.precio}
+            </h3>
+
+            <p
+              className="mt-3"
+              style={{
+                fontSize: "18px",
+                color: "#555",
+              }}
+            >
+              {producto.descripcion}
+            </p>
+
+            <p className="mt-3">
+              <strong>Stock:</strong> {producto.stock}
+            </p>
+
+            <Button
+              variant="secondary"
+              size="lg"
+              onClick={() => addToCart(producto)}
+            >
+              Agregar al carrito
+            </Button>
+
+          </Col>
+
+        </Row>
+      </Card>
+    </Container>
   );
 };
 

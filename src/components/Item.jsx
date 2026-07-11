@@ -1,78 +1,74 @@
 import { Link } from "react-router-dom";
+import { Card, Button, Badge } from "react-bootstrap";
 
 const Item = ({ producto }) => {
   return (
-    <div
+    <Card
+      className="h-100 shadow-sm"
       style={{
-        border: "1px solid #d9c2b0",
-        padding: "20px",
         borderRadius: "15px",
-        backgroundColor: "#fffaf7",
-        textAlign: "center",
-        boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-        transition: "0.3s",
+        border: "1px solid #d9c2b0",
       }}
     >
-      <img
+      <Card.Img
+        variant="top"
         src={producto.imagen}
-        alt={producto.nombre}
-        width="200"
         style={{
-          borderRadius: "10px",
-          marginBottom: "15px",
+          height: "250px",
+          objectFit: "cover",
         }}
       />
 
-      <h3 style={{ color: "#7a4e3a" }}>
-        {producto.nombre}
-      </h3>
+      <Card.Body className="d-flex flex-column">
 
-      {producto.destacado && (
-        <p
+        <Card.Title
           style={{
-            color: "#b07d4f",
+            color: "#7a4e3a",
             fontWeight: "bold",
           }}
         >
-          ⭐ Producto destacado
-        </p>
-      )}
+          {producto.nombre}
+        </Card.Title>
 
-      {producto.oferta && (
-        <p
+        {producto.destacado && (
+          <Badge
+            bg="light"
+            text="dark"
+            className="mb-2"
+          >
+            ⭐ Destacado
+          </Badge>
+        )}
+
+        {producto.oferta && (
+          <Badge
+            bg="danger"
+            className="mb-2"
+          >
+            🔥 Oferta
+          </Badge>
+        )}
+
+        <h4
           style={{
-            color: "#c94c4c",
-            fontWeight: "bold",
+            marginTop: "10px",
+            color: "#7a4e3a",
           }}
         >
-          🔥 Oferta
-        </p>
-      )}
+          ${producto.precio}
+        </h4>
 
-      <p
-        style={{
-          fontSize: "18px",
-          fontWeight: "bold",
-        }}
-      >
-        ${producto.precio}
-      </p>
+        <Button
+          as={Link}
+          to={`/producto/${producto.id}`}
+          variant="outline-secondary"
+          className="mt-auto"
+        >
+          Ver detalle
+        </Button>
 
-      <Link
-        to={`/producto/${producto.id}`}
-        style={{
-          textDecoration: "none",
-          color: "white",
-          backgroundColor: "#d8b4a0",
-          padding: "10px 15px",
-          borderRadius: "8px",
-          display: "inline-block",
-          marginTop: "10px",
-        }}
-      >
-        Ver detalle
-      </Link>
-    </div>
+      </Card.Body>
+    </Card>
   );
 };
 

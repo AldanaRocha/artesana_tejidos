@@ -1,146 +1,164 @@
 [
-{
-"id": 1,
-"nombre": "Bandera",
-"precio": 10000,
-"stock":10,
-"imagen": "/images/Bandera.png",
-"destacado": false
-},
-{
-"id": 2,
-"nombre": "Escarapela",
-"precio": 1500,
-"stock":15,
-"imagen": "/images/Escarapela.png",
-"destacado": true
-},
-{
-"id": 3,
-"nombre": "Flor",
-"precio": 8000,
-"stock":2,
-"imagen": "/images/Flor.png",
-"destacado": true
-},
-{
-"id": 4,
-"nombre": "Atrapasueños",
-"precio": 10000,
-"stock":5,
-"imagen": "/images/atrapasueñoschico.jpeg",
-"destacado": false
-},
-{
-"id": 5,
-"nombre": "Aros Whipala",
-"precio": 3000,
-"stock":10,
-"imagen": "/images/aroswhipala.jpeg",
-"destacado": false
-},
-{
-"id": 6,
-"nombre": "Aros Hoja",
-"precio": 2000,
-"stock":4,
-"imagen": "/images/aroshoja.jpeg",
-"destacado": false
-},
-{
-"id": 7,
-"nombre": "Buho",
-"precio": 7000,
-"stock":15,
-"imagen": "/images/buho.jpeg",
-"destacado": false
-},
-{
-"id": 8,
-"nombre": "Corazon",
-"precio": 8000,
-"stock":20,
-"imagen": "/images/corazon.jpeg",
-"destacado": true
-},
-{
-"id": 9,
-"nombre": "Aros Circular",
-"precio": 3000,
-"stock":6,
-"imagen": "/images/aroscircular.jpeg",
-"destacado": false
-},
-{
-"id": 10,
-"nombre": "Aros Dobles",
-"precio": 3000,
-"stock":12,
-"imagen": "/images/arosdobles.jpeg",
-"destacado": false
-},
-{
-"id": 11,
-"nombre": "Aros Estrella",
-"precio": 4000,
-"stock":2,
-"imagen": "/images/arosestrella.jpeg",
-"destacado": false
-},
-{
-"id": 12,
-"nombre": "Girasol",
-"precio": 8000,
-"stock":2,
-"imagen": "/images/girasol2.jpeg",
-"destacado": false
-},
-{
-"id": 13,
-"nombre": "Girasol LLavero",
-"precio": 8000,
-"stock":2,
-"imagen": "/images/girasol.jpeg",
-"destacado": false
-},
-{
-"id": 14,
-"nombre": "Manta Girasol",
-"precio": 28000,
-"stock":2,
-"imagen": "/images/mantagirasol.jpeg",
-"destacado": false
-},
-{
-"id": 15,
-"nombre": "Pulsera",
-"precio": 3000,
-"stock":2,
-"imagen": "/images/pulsera.jpeg",
-"destacado": false
-},
-{
-"id": 16,
-"nombre": "Set Bebé",
-"precio": 30000,
-"stock":5,
-"imagen": "/images/setbebe.jpeg",
-"destacado": false
-},
-{
-"id": 17,
-"nombre": "Top",
-"precio": 10000,
-"stock":15,
-"imagen": "/images/topropa.jpeg",
-"destacado": false
-},
-{
-"id": 18,
-"nombre": "Atrapasueños Escarapela",
-"precio": 15000,
-"stock":3,
-"imagen": "/images/atrapasueñosescarapela.jpeg",
-"destacado": true
-}
+  {
+    "id": 1,
+    "nombre": "Bandera",
+    "descripcion": "Bandera tejida artesanalmente en crochet, ideal para decorar escuelas, hogares y eventos patrios.",
+    "precio": 10000,
+    "stock": 10,
+    "imagen": "/images/Bandera.png",
+    "destacado": false
+  },
+  {
+    "id": 2,
+    "nombre": "Escarapela",
+    "descripcion": "Escarapela tejida a mano en crochet, perfecta para actos escolares y fechas patrias.",
+    "precio": 1500,
+    "stock": 15,
+    "imagen": "/images/Escarapela.png",
+    "destacado": true
+  },
+  {
+    "id": 3,
+    "nombre": "Flor",
+    "descripcion": "Flor artesanal tejida en crochet, ideal para regalar o decorar cualquier espacio.",
+    "precio": 8000,
+    "stock": 2,
+    "imagen": "/images/Flor.png",
+    "destacado": true
+  },
+  {
+    "id": 4,
+    "nombre": "Atrapasueños",
+    "descripcion": "Atrapasueños artesanal tejido con delicados detalles, perfecto para decorar ambientes.",
+    "precio": 10000,
+    "stock": 5,
+    "imagen": "/images/atrapasueñoschico.jpeg",
+    "destacado": false
+  },
+  {
+    "id": 5,
+    "nombre": "Aros Whipala",
+    "descripcion": "Aros tejidos en macramé inspirados en la Whipala, livianos y confeccionados a mano.",
+    "precio": 3000,
+    "stock": 10,
+    "imagen": "/images/aroswhipala.jpeg",
+    "destacado": false
+  },
+  {
+    "id": 6,
+    "nombre": "Aros Hoja",
+    "descripcion": "Aros de macramé con diseño de hoja, elaborados artesanalmente con gran dedicación.",
+    "precio": 2000,
+    "stock": 4,
+    "imagen": "/images/aroshoja.jpeg",
+    "destacado": false
+  },
+  {
+    "id": 7,
+    "nombre": "Buho",
+    "descripcion": "Búho tejido en crochet, ideal como decoración o regalo artesanal.",
+    "precio": 7000,
+    "stock": 15,
+    "imagen": "/images/buho.jpeg",
+    "destacado": false
+  },
+  {
+    "id": 8,
+    "nombre": "Corazon",
+    "descripcion": "Corazón tejido a mano en crochet, perfecto para decorar o hacer un regalo especial.",
+    "precio": 8000,
+    "stock": 20,
+    "imagen": "/images/corazon.jpeg",
+    "destacado": true
+  },
+  {
+    "id": 9,
+    "nombre": "Aros Circular",
+    "descripcion": "Aros circulares tejidos en macramé con un diseño moderno y artesanal.",
+    "precio": 3000,
+    "stock": 6,
+    "imagen": "/images/aroscircular.jpeg",
+    "destacado": false
+  },
+  {
+    "id": 10,
+    "nombre": "Aros Dobles",
+    "descripcion": "Aros dobles confeccionados artesanalmente en macramé, livianos y elegantes.",
+    "precio": 3000,
+    "stock": 12,
+    "imagen": "/images/arosdobles.jpeg",
+    "destacado": false
+  },
+  {
+    "id": 11,
+    "nombre": "Aros Estrella",
+    "descripcion": "Aros con diseño de estrella tejidos a mano, ideales para complementar cualquier estilo.",
+    "precio": 4000,
+    "stock": 2,
+    "imagen": "/images/arosestrella.jpeg",
+    "destacado": false
+  },
+  {
+    "id": 12,
+    "nombre": "Girasol",
+    "descripcion": "Girasol tejido artesanalmente en crochet, perfecto para decorar con un toque natural.",
+    "precio": 8000,
+    "stock": 2,
+    "imagen": "/images/girasol2.jpeg",
+    "destacado": false
+  },
+  {
+    "id": 13,
+    "nombre": "Girasol Llavero",
+    "descripcion": "Llavero de girasol tejido en crochet, práctico, colorido y completamente artesanal.",
+    "precio": 8000,
+    "stock": 2,
+    "imagen": "/images/girasol.jpeg",
+    "destacado": false
+  },
+  {
+    "id": 14,
+    "nombre": "Manta Girasol",
+    "descripcion": "Manta tejida en crochet con diseño de girasoles, ideal para decorar sillones o camas.",
+    "precio": 28000,
+    "stock": 2,
+    "imagen": "/images/mantagirasol.jpeg",
+    "destacado": false
+  },
+  {
+    "id": 15,
+    "nombre": "Pulsera",
+    "descripcion": "Pulsera artesanal confeccionada en macramé, cómoda, resistente y hecha a mano.",
+    "precio": 3000,
+    "stock": 2,
+    "imagen": "/images/pulsera.jpeg",
+    "destacado": false
+  },
+  {
+    "id": 16,
+    "nombre": "Set Bebé",
+    "descripcion": "Set para bebé tejido artesanalmente en crochet con materiales suaves y delicados.",
+    "precio": 30000,
+    "stock": 5,
+    "imagen": "/images/setbebe.jpeg",
+    "destacado": false
+  },
+  {
+    "id": 17,
+    "nombre": "Top",
+    "descripcion": "Top tejido en crochet, fresco, cómodo y confeccionado completamente a mano.",
+    "precio": 10000,
+    "stock": 15,
+    "imagen": "/images/topropa.jpeg",
+    "destacado": false
+  },
+  {
+    "id": 18,
+    "nombre": "Atrapasueños Escarapela",
+    "descripcion": "Atrapasueños artesanal con diseño de escarapela, ideal para decorar con un estilo único.",
+    "precio": 15000,
+    "stock": 3,
+    "imagen": "/images/atrapasueñosescarapela.jpeg",
+    "destacado": true
+  }
 ]

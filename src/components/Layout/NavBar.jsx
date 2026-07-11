@@ -1,67 +1,58 @@
 import { Link } from "react-router-dom";
+import { Navbar, Container, Nav } from "react-bootstrap";
 import CartWidget from "../CartWidget";
 
 const NavBar = () => {
   return (
-    <nav
-      style={{
-        backgroundColor: "#d8b4a0",
-        padding: "20px",
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-      }}
+    <Navbar
+      expand="lg"
+      style={{ backgroundColor: "#d8b4a0" }}
+      className="py-3"
     >
-      <h2
-        style={{
-          color: "white",
-          margin: 0,
-        }}
-      >
-        ___artesanaaa___
-      </h2>
-
-      <div
-        style={{
-          display: "flex",
-          gap: "25px",
-          alignItems: "center",
-        }}
-      >
-        <Link
+      <Container>
+        <Navbar.Brand
+          as={Link}
           to="/"
           style={{
             color: "white",
-            textDecoration: "none",
             fontWeight: "bold",
+            fontSize: "1.5rem",
           }}
         >
-          Inicio
-        </Link>
+          ___artesanaaa___
+        </Navbar.Brand>
 
-        <Link
-          to="/productos"
-          style={{
-            color: "white",
-            textDecoration: "none",
-            fontWeight: "bold",
-          }}
-        >
-          Productos
-        </Link>
+        <Navbar.Toggle aria-controls="navbar-nav" />
 
-        <Link
-          to="/carrito"
-          style={{
-            color: "white",
-            textDecoration: "none",
-            fontWeight: "bold",
-          }}
-        >
-          <CartWidget />
-        </Link>
-      </div>
-    </nav>
+        <Navbar.Collapse id="navbar-nav">
+          <Nav className="ms-auto align-items-center gap-3">
+            <Nav.Link
+              as={Link}
+              to="/"
+              style={{ color: "white", fontWeight: "bold" }}
+            >
+              Inicio
+            </Nav.Link>
+
+            <Nav.Link
+              as={Link}
+              to="/productos"
+              style={{ color: "white", fontWeight: "bold" }}
+            >
+              Productos
+            </Nav.Link>
+
+            <Nav.Link
+              as={Link}
+              to="/carrito"
+              style={{ color: "white", fontWeight: "bold" }}
+            >
+              <CartWidget />
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 };
 

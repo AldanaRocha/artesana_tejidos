@@ -4,6 +4,7 @@ import Home from "../pages/Home";
 import Productos from "../pages/Productos";
 import ProductosDetalle from "../pages/ProductosDetalle";
 import Carrito from "../pages/Carrito";
+import Checkout from "../pages/Checkout";
 
 import Layout from "../components/Layout/Layout";
 
@@ -28,6 +29,8 @@ const AppRouter = () => {
             path="/carrito"
             element={<Carrito />}
           />
+
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
       </Layout>
     </BrowserRouter>

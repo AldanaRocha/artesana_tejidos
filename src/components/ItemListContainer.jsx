@@ -1,16 +1,30 @@
 import { useEffect, useState } from "react";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../firebase/config";
 import Item from "./Item";
 
 const ItemListContainer = () => {
   const [productos, setProductos] = useState([]);
 
-  useEffect(() => {
-    fetch("/data/productos.json")
-      .then((response) => response.json())
-      .then((data) => {
-        setProductos(data);
-      });
-  }, []);
+useEffect(() => {
+  const obtenerProductos = async () => {
+    try {
+      const productosRef = collection(db, "productos");
+      const snapshot = await getDocs(productosRef);
+
+      const productosFirestore = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+
+      setProductos(productosFirestore);
+    } catch (error) {
+      console.error("Error al obtener productos:", error);
+    }
+  };
+
+  obtenerProductos();
+}, []);
 
   return (
     <div
