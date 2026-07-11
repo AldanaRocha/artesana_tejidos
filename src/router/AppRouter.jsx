@@ -7,6 +7,8 @@ import Carrito from "../pages/Carrito";
 import Checkout from "../pages/Checkout";
 
 import Layout from "../components/Layout/Layout";
+import Register from "../pages/Register";
+import Login from "../pages/Login"
 
 const AppRouter = () => {
   return (
@@ -14,7 +16,14 @@ const AppRouter = () => {
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
-
+          <Route
+            path="/register"
+            element={<Register />}
+          />
+          <Route
+            path="/login"
+            element={<Login />}
+          />
           <Route
             path="/productos"
             element={<Productos />}
