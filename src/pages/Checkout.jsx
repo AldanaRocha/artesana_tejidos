@@ -8,6 +8,9 @@ const Checkout = () => {
     const [email, setEmail] = useState("");
     const [telefono, setTelefono] = useState("");
 const [mensaje, setMensaje] = useState("");
+const [cupon, setCupon] = useState("");
+const [descuento, setDescuento] = useState(0);
+const [mensajeCupon, setMensajeCupon] = useState("");
 
 const confirmarCompra = () => {
 
@@ -24,6 +27,37 @@ const confirmarCompra = () => {
   setTelefono("");
 
 };
+
+const aplicarCupon = () => {
+
+  const codigo = cupon.toUpperCase();
+
+  if (codigo === "ARTESANA10") {
+
+    setDescuento(10);
+    setMensajeCupon("✅ Cupón del 10% aplicado.");
+
+  } else if (codigo === "CROCHET20") {
+
+    setDescuento(20);
+    setMensajeCupon("✅ Cupón del 20% aplicado.");
+
+  } else if (codigo === "BIENVENIDA") {
+
+    setDescuento(15);
+    setMensajeCupon("✅ Cupón del 15% aplicado.");
+
+  } else {
+
+    setDescuento(0);
+    setMensajeCupon("❌ Cupón inválido.");
+
+  }
+
+};
+const totalFinal =
+  totalCompra - (totalCompra * descuento) / 100;
+
   return (
     <div className="container mt-4">
       <h1>Finalizar compra</h1>
@@ -44,6 +78,45 @@ const confirmarCompra = () => {
       <h2 className="mt-4">
         Total: ${totalCompra}
       </h2>
+
+      {descuento > 0 && (
+        <>
+          <h4 className="text-success">
+            Descuento: {descuento}%
+          </h4>
+
+          <h2>
+            Total final: $
+            {totalFinal.toFixed(2)}
+          </h2>
+        </>
+      )}
+      <hr />
+
+      <h3>Cupón de descuento</h3>
+
+      <Form.Group className="mb-3">
+        <Form.Control
+          type="text"
+          placeholder="Ingresá tu cupón"
+          value={cupon}
+          onChange={(e) => setCupon(e.target.value)}
+        />
+      </Form.Group>
+
+      <Button
+        variant="primary"
+        className="mb-3"
+        onClick={aplicarCupon}
+      >
+        Aplicar cupón
+      </Button>
+
+      {mensajeCupon && (
+        <p className="fw-bold">
+          {mensajeCupon}
+        </p>
+      )}
 
       <hr />
 
