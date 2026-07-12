@@ -3,23 +3,39 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { onAuthStateChanged, signOut } from "firebase/auth";
-
+import { doc, getDoc } from "firebase/firestore";
+import { db, auth } from "../../firebase/config";
 import CartWidget from "../CartWidget";
-import { auth } from "../../firebase/config";
 
 const NavBar = () => {
 
   const [usuario, setUsuario] = useState(null);
+  const [esAdmin, setEsAdmin] = useState(false);
 
-  useEffect(() => {
+    useEffect(() => {
 
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setUsuario(user);
-    });
+      const unsubscribe = onAuthStateChanged(auth, async (user) => {
 
-    return () => unsubscribe();
+        setUsuario(user);
 
-  }, []);
+        if (!user) {
+          setEsAdmin(false);
+          return;
+        }
+
+        const docRef = doc(db, "usuarios", user.uid);
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+          const datos = docSnap.data();
+          setEsAdmin(datos.rol === "admin");
+        }
+
+      });
+
+      return () => unsubscribe();
+
+    }, []);
 
 
   const cerrarSesion = () => {
@@ -87,7 +103,20 @@ const NavBar = () => {
               style={{ color: "white", fontWeight: "bold" }}
             >
               <CartWidget />
+
+
             </Nav.Link>
+                        {esAdmin && (
+              <Nav.Link
+                as={Link}
+                to="/gestion"
+                style={{ color: "white", fontWeight: "bold" }}
+              >
+                Gestión de Productos
+              </Nav.Link>
+            )}
+
+
                   <Nav.Link
                     onClick={cerrarSesion}
                     style={{

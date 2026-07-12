@@ -26,24 +26,33 @@ const Register = () => {
     setError("");
 
     try {
-      await createUserWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
+  const credenciales = await createUserWithEmailAndPassword(
+    auth,
+    email,
+    password
+  );
 
-      navigate("/");
-    } catch (error) {
-      if (error.code === "auth/email-already-in-use") {
-        setError("Ese correo ya está registrado.");
-      } else if (error.code === "auth/weak-password") {
-        setError("La contraseña debe tener al menos 6 caracteres.");
-      } else if (error.code === "auth/invalid-email") {
-        setError("Correo electrónico inválido.");
-      } else {
-        setError(error.message);
-      }
+  await setDoc(
+    doc(db, "usuarios", credenciales.user.uid),
+    {
+      uid: credenciales.user.uid,
+      email: email,
+      rol: "usuario",
     }
+  );
+
+  navigate("/");
+} catch (error) {
+  if (error.code === "auth/email-already-in-use") {
+    setError("Ese correo ya está registrado.");
+  } else if (error.code === "auth/weak-password") {
+    setError("La contraseña debe tener al menos 6 caracteres.");
+  } else if (error.code === "auth/invalid-email") {
+    setError("Correo electrónico inválido.");
+  } else {
+    setError(error.message);
+  }
+}
   };
 
   return (

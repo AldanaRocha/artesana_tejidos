@@ -5,7 +5,9 @@ import Productos from "../pages/Productos";
 import ProductosDetalle from "../pages/ProductosDetalle";
 import Carrito from "../pages/Carrito";
 import Checkout from "../pages/Checkout";
-
+import GestionProductos from "../pages/GestionProductos";
+import NuevoProducto from "../pages/NuevoProducto";
+import ProtectedRouter from "./ProtectedRouter";
 import Layout from "../components/Layout/Layout";
 import Register from "../pages/Register";
 import Login from "../pages/Login"
@@ -27,6 +29,30 @@ const AppRouter = () => {
           <Route
             path="/productos"
             element={<Productos />}
+          />
+          <Route
+            path="/gestion"
+            element={
+              <ProtectedRouter>
+                <GestionProductos />
+              </ProtectedRouter>
+            }
+          />
+          <Route
+          path="/gestion/nuevo-producto"
+          element={
+          <ProtectedRouter>
+            <NuevoProducto/>
+          </ProtectedRouter>}
+          />
+
+          <Route
+            path="/gestion/nuevo-producto/:id"
+            element={
+              <ProtectedRouter>
+                <NuevoProducto />
+              </ProtectedRouter>
+            }
           />
 
           <Route
