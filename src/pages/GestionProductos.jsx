@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
 import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
 import { db } from "../firebase/config";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import {
   Container,
   Table,
   Button,
   Image,
 } from "react-bootstrap";
-
 const GestionProductos = () => {
 
   const [productos, setProductos] = useState([]);
@@ -70,6 +69,16 @@ const GestionProductos = () => {
             >
             Nuevo Producto
             </Button>
+            <Button
+            
+              as={Link}
+              to="/gestion-cupones"
+              variant="primary"
+            >
+              Cupones
+            </Button>
+
+
                 </div>
 
       <Table striped bordered hover responsive>
@@ -109,7 +118,7 @@ const GestionProductos = () => {
               <td>
 
                 <Button
-                variant="warning"
+                variant="outline-primary"
                 size="sm"
                 className="me-2"
                 onClick={() =>
@@ -121,7 +130,7 @@ const GestionProductos = () => {
 
                 
                 <Button
-                variant="danger"
+                variant="outline-secondary"
                 size="sm"
                 onClick={() => eliminarProducto(producto.id)}
                 >

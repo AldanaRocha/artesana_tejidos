@@ -7,6 +7,7 @@ import Carrito from "../pages/Carrito";
 import Checkout from "../pages/Checkout";
 import GestionProductos from "../pages/GestionProductos";
 import NuevoProducto from "../pages/NuevoProducto";
+import GestionCupones from "../pages/GestionCupones";
 import ProtectedRouter from "./ProtectedRouter";
 import Layout from "../components/Layout/Layout";
 import Register from "../pages/Register";
@@ -58,6 +59,15 @@ const AppRouter = () => {
           <Route
             path="/producto/:id"
             element={<ProductosDetalle />}
+          />
+
+          <Route
+            path="/gestion-cupones"
+            element={
+              <ProtectedRouter>
+                <GestionCupones />
+              </ProtectedRouter>
+            }
           />
 
           <Route
